@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Visualize_Your_Vette" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LTY-Cv-6bj">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" red="0.40000000600000002" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" apportionsSegmentWidthsByContent="YES" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="2MO-BF-HVz">
+                                <rect key="frame" x="150" y="552" width="299" height="29"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
+                                <segments>
+                                    <segment title="Model"/>
+                                    <segment title="Body Type"/>
+                                    <segment title="Color"/>
+                                    <segment title="Wheels"/>
+                                    <segment title="Interior"/>
+                                </segments>
+                                <color key="tintColor" red="0.72941176470000002" green="0.79215686269999996" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="PickOption:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="oAX-ec-W9S"/>
+                                </connections>
+                            </segmentedControl>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="l1500-corvette-c6-logo-59314" translatesAutoresizingMaskIntoConstraints="NO" id="TLT-zw-w7x" userLabel="Logo">
+                                <rect key="frame" x="70" y="20" width="460" height="262"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="262" id="4cW-JN-PXh"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ztf-AP-3Ra" userLabel="FirstView">
+                                <rect key="frame" x="20" y="314" width="560" height="222.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mA8-So-byp">
+                                        <rect key="frame" x="143" y="38" width="275.5" height="29"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Beauty and beast all in one package!">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.72941176470588232" green="0.792156862745098" blue="0.85882352941176465" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <font key="NSFont" size="18" name="Noteworthy-Bold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <color key="highlightedColor" red="0.40000000600000002" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k2m-9g-VDc">
+                                        <rect key="frame" x="193" y="104.5" width="175.5" height="23"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="It's just a Chevy!">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.90196078431372551" green="0.88235294117647056" blue="0.84705882352941175" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <font key="NSFont" size="18" name="Chalkduster"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wC7-Ia-8GN">
+                                        <rect key="frame" x="154" y="165" width="252" height="20"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Civil disobedience on 4 wheels!">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.68235294117647061" green="0.66274509803921566" blue="0.60784313725490191" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <font key="NSFont" size="17" name="Trebuchet-BoldItalic"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WA1-He-Yzi">
+                                        <rect key="frame" x="0.0" y="185" width="560" height="37.5"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="as6-lx-qWM">
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="38"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="daZ-Po-fkY">
+                                        <rect key="frame" x="0.0" y="127.5" width="560" height="37.5"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f0j-As-vqY">
+                                        <rect key="frame" x="0.0" y="67" width="560" height="37.5"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.39528556034482759" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="f0j-As-vqY" firstAttribute="centerX" secondItem="as6-lx-qWM" secondAttribute="centerX" id="0CR-bx-Cbt"/>
+                                    <constraint firstItem="f0j-As-vqY" firstAttribute="height" secondItem="as6-lx-qWM" secondAttribute="height" id="0S0-TP-K1b"/>
+                                    <constraint firstItem="k2m-9g-VDc" firstAttribute="centerX" secondItem="Ztf-AP-3Ra" secondAttribute="centerX" id="0hq-5I-IhZ"/>
+                                    <constraint firstItem="k2m-9g-VDc" firstAttribute="top" secondItem="f0j-As-vqY" secondAttribute="bottom" id="3Bj-vo-nC3"/>
+                                    <constraint firstItem="as6-lx-qWM" firstAttribute="leading" secondItem="Ztf-AP-3Ra" secondAttribute="leading" id="7Jr-B5-cE0"/>
+                                    <constraint firstItem="WA1-He-Yzi" firstAttribute="width" secondItem="as6-lx-qWM" secondAttribute="width" id="B9V-S8-nav"/>
+                                    <constraint firstItem="daZ-Po-fkY" firstAttribute="top" secondItem="k2m-9g-VDc" secondAttribute="bottom" id="CQk-Cs-Boy"/>
+                                    <constraint firstItem="daZ-Po-fkY" firstAttribute="centerX" secondItem="as6-lx-qWM" secondAttribute="centerX" id="DNo-4f-JAt"/>
+                                    <constraint firstItem="mA8-So-byp" firstAttribute="top" secondItem="as6-lx-qWM" secondAttribute="bottom" id="Esm-Le-HnV"/>
+                                    <constraint firstItem="f0j-As-vqY" firstAttribute="width" secondItem="as6-lx-qWM" secondAttribute="width" id="N3g-Pt-GZr"/>
+                                    <constraint firstItem="WA1-He-Yzi" firstAttribute="centerX" secondItem="as6-lx-qWM" secondAttribute="centerX" id="NWP-gv-CpB"/>
+                                    <constraint firstItem="wC7-Ia-8GN" firstAttribute="centerX" secondItem="Ztf-AP-3Ra" secondAttribute="centerX" id="aFo-OT-QMX"/>
+                                    <constraint firstItem="mA8-So-byp" firstAttribute="centerX" secondItem="Ztf-AP-3Ra" secondAttribute="centerX" id="aMV-cB-jvs"/>
+                                    <constraint firstAttribute="bottom" secondItem="WA1-He-Yzi" secondAttribute="bottom" id="bI1-Rb-X4k"/>
+                                    <constraint firstItem="daZ-Po-fkY" firstAttribute="height" secondItem="as6-lx-qWM" secondAttribute="height" id="eNn-cQ-csm"/>
+                                    <constraint firstItem="WA1-He-Yzi" firstAttribute="height" secondItem="as6-lx-qWM" secondAttribute="height" id="fGB-PT-znP"/>
+                                    <constraint firstItem="WA1-He-Yzi" firstAttribute="top" secondItem="wC7-Ia-8GN" secondAttribute="bottom" id="iDR-R4-fpy"/>
+                                    <constraint firstAttribute="trailing" secondItem="as6-lx-qWM" secondAttribute="trailing" id="wcw-aU-Y5l"/>
+                                    <constraint firstItem="daZ-Po-fkY" firstAttribute="width" secondItem="as6-lx-qWM" secondAttribute="width" id="wux-eu-b6I"/>
+                                    <constraint firstItem="f0j-As-vqY" firstAttribute="top" secondItem="mA8-So-byp" secondAttribute="bottom" id="xao-xI-aMd"/>
+                                    <constraint firstItem="as6-lx-qWM" firstAttribute="top" secondItem="Ztf-AP-3Ra" secondAttribute="top" id="yb0-ki-gjL"/>
+                                    <constraint firstItem="wC7-Ia-8GN" firstAttribute="top" secondItem="daZ-Po-fkY" secondAttribute="bottom" id="zEe-l3-Hy7"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="TLT-zw-w7x" secondAttribute="trailing" constant="50" id="1SM-AS-d2w"/>
+                            <constraint firstItem="2MO-BF-HVz" firstAttribute="top" secondItem="WA1-He-Yzi" secondAttribute="bottom" constant="15" id="AkB-pl-iC4"/>
+                            <constraint firstAttribute="trailing" secondItem="LTY-Cv-6bj" secondAttribute="trailing" id="Bjd-iY-wHB"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="2MO-BF-HVz" secondAttribute="bottom" constant="20" id="INL-7M-ZBu"/>
+                            <constraint firstItem="TLT-zw-w7x" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="50" id="PWN-ve-yal"/>
+                            <constraint firstItem="LTY-Cv-6bj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Pd0-Oe-JFx"/>
+                            <constraint firstItem="LTY-Cv-6bj" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="XFo-IC-LIo"/>
+                            <constraint firstItem="LTY-Cv-6bj" firstAttribute="top" secondItem="TLT-zw-w7x" secondAttribute="bottom" constant="-282" id="bQW-B5-EWX"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="LTY-Cv-6bj" secondAttribute="bottom" id="dCG-TN-Zjv"/>
+                            <constraint firstItem="2MO-BF-HVz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="irP-7I-RLT"/>
+                            <constraint firstItem="Ztf-AP-3Ra" firstAttribute="top" secondItem="TLT-zw-w7x" secondAttribute="bottom" constant="32.5" id="k1T-ka-bPT"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ztf-AP-3Ra" secondAttribute="trailing" id="pcY-Gj-yuR"/>
+                            <constraint firstItem="2MO-BF-HVz" firstAttribute="top" secondItem="Ztf-AP-3Ra" secondAttribute="bottom" constant="15" id="uPQ-fu-1TD"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="Ztf-AP-3Ra" secondAttribute="leading" id="ueD-qw-Xzd"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="FirstView" destination="Ztf-AP-3Ra" id="Ein-EK-tk7"/>
+                        <outlet property="quote1" destination="mA8-So-byp" id="S9s-g5-2o8"/>
+                        <outlet property="quote2" destination="k2m-9g-VDc" id="0g8-4X-2aC"/>
+                        <outlet property="quote3" destination="wC7-Ia-8GN" id="CRm-H0-HDB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="245" y="316"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="l1500-corvette-c6-logo-59314" width="172" height="172"/>
+    </resources>
+</document>
