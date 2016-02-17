@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     let stingray = UIImage(named: "stingray")
     let z06 = UIImage(named: "Z06")
     
+    var row = [UIImage]()
     var ZCV = [[UIImage]]()
     var ZCP = [[UIImage]]()
     var SCP = [[UIImage]]()
@@ -24,7 +25,7 @@ class ViewController: UIViewController {
     var ImArr = [[UIImage]]()
     
     var bodyType = 0    // 0->Coupe 1->Convertible
-    var modelType = 0   // 0->Stingray 1->Z06
+    var modelType = 1   // 0->Stingray 1->Z06
     var colorNum = 2    // 0->white, 1->red, 2->gray, 3->black, 4->silver
     var wheel = 0       // four wheel types, left to right.
 
@@ -53,105 +54,87 @@ class ViewController: UIViewController {
     @IBOutlet weak var wheelLabel: UILabel!
     
     @IBOutlet weak var mainImage: UIImageView!
+    @IBOutlet weak var carBckGrnd: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        /*
-        let wht1 = UIImage(named: "WhiteZCP1")
-        let wht2 = UIImage(named: "WhiteZCP2")
-        let wht3 = UIImage(named: "WhiteZCP3")
-        let wht4 = UIImage(named: "WhiteZCP4")
-        ZCP[0].append(wht1!)
-        ZCP[0].append(wht2!)
-        ZCP[0].append(wht3!)
-        ZCP[0].append(wht4!)
         
-        let wht5 = UIImage(named: "WhiteZCV1")
-        let wht6 = UIImage(named: "WhiteZCV2")
-        let wht7 = UIImage(named: "WhiteZCV3")
-        let wht8 = UIImage(named: "WhiteZCV4")
-        ZCV[0].append(wht5!)
-        ZCV[0].append(wht6!)
-        ZCV[0].append(wht7!)
-        ZCV[0].append(wht8!)
+        row.removeAll()
+        row.append(UIImage(named: "WhiteZCP1")!)
+        row.append(UIImage(named: "WhiteZCP2")!)
+        row.append(UIImage(named: "WhiteZCP3")!)
+        row.append(UIImage(named: "WhiteZCP4")!)
+        ZCP.append(row)
         
-        let red1 = UIImage(named: "RedZCP1")
-        let red2 = UIImage(named: "RedZCP2")
-        let red3 = UIImage(named: "RedZCP3")
-        let red4 = UIImage(named: "RedZCP4")
-        ZCP[1].append(red1!)
-        ZCP[1].append(red2!)
-        ZCP[1].append(red3!)
-        ZCP[1].append(red4!)
+        row.removeAll()
+        row.append(UIImage(named: "WhiteZCV1")!)
+        row.append(UIImage(named: "WhiteZCV2")!)
+        row.append(UIImage(named: "WhiteZCV3")!)
+        row.append(UIImage(named: "WhiteZCV4")!)
+        ZCV.append(row)
         
-        let red5 = UIImage(named: "RedZCV1")
-        let red6 = UIImage(named: "RedZCV2")
-        let red7 = UIImage(named: "RedZCV3")
-        let red8 = UIImage(named: "RedZCV4")
-        ZCV[1].append(red5!)
-        ZCV[1].append(red6!)
-        ZCV[1].append(red7!)
-        ZCV[1].append(red8!)
+        row.removeAll()
+        row.append(UIImage(named: "RedZCP1")!)
+        row.append(UIImage(named: "RedZCP2")!)
+        row.append(UIImage(named: "RedZCP3")!)
+        row.append(UIImage(named: "RedZCP4")!)
+        ZCP.append(row)
         
-        let gray1 = UIImage(named: "GrayZCP1")
-        let gray2 = UIImage(named: "GrayZCP2")
-        let gray3 = UIImage(named: "GrayZCP3")
-        let gray4 = UIImage(named: "GrayZCP4")
-        ZCP[2].append(gray1!)
-        ZCP[2].append(gray2!)
-        ZCP[2].append(gray3!)
-        ZCP[2].append(gray4!)
+        row.removeAll()
+        row.append(UIImage(named: "RedZCV1")!)
+        row.append(UIImage(named: "RedZCV2")!)
+        row.append(UIImage(named: "RedZCV3")!)
+        row.append(UIImage(named: "RedZCV4")!)
+        ZCV.append(row)
         
-        let gray5 = UIImage(named: "GrayZCV1")
-        let gray6 = UIImage(named: "GrayZCV2")
-        let gray7 = UIImage(named: "GrayZCV3")
-        let gray8 = UIImage(named: "GrayZCV4")
-        ZCV[2].append(gray5!)
-        ZCV[2].append(gray6!)
-        ZCV[2].append(gray7!)
-        ZCV[2].append(gray8!)
+        row.removeAll()
+        row.append(UIImage(named: "GrayZCP1")!)
+        row.append(UIImage(named: "GrayZCP2")!)
+        row.append(UIImage(named: "GrayZCP3")!)
+        row.append(UIImage(named: "GrayZCP4")!)
+        ZCP.append(row)
+        
+        row.removeAll()
+        row.append(UIImage(named: "GrayZCV1")!)
+        row.append(UIImage(named: "GrayZCV2")!)
+        row.append(UIImage(named: "GrayZCV3")!)
+        row.append(UIImage(named: "GrayZCV4")!)
+        ZCV.append(row)
 
-        let blk1 = UIImage(named: "BlackZCP1")
-        let blk2 = UIImage(named: "BlackZCP2")
-        let blk3 = UIImage(named: "BlackZCP3")
-        let blk4 = UIImage(named: "BlackZCP4")
-        ZCP[3].append(blk1!)
-        ZCP[3].append(blk2!)
-        ZCP[3].append(blk3!)
-        ZCP[3].append(blk4!)
+        row.removeAll()
+        row.append(UIImage(named: "BlackZCP1")!)
+        row.append(UIImage(named: "BlackZCP2")!)
+        row.append(UIImage(named: "BlackZCP3")!)
+        row.append(UIImage(named: "BlackZCP4")!)
+        ZCP.append(row)
         
-        let blk5 = UIImage(named: "BlackZCV1")
-        let blk6 = UIImage(named: "BlackZCV2")
-        let blk7 = UIImage(named: "BlackZCV3")
-        let blk8 = UIImage(named: "BlackZCV4")
-        ZCV[3].append(blk5!)
-        ZCV[3].append(blk6!)
-        ZCV[3].append(blk7!)
-        ZCV[3].append(blk8!)
+        row.removeAll()
+        row.append(UIImage(named: "BlackZCV1")!)
+        row.append(UIImage(named: "BlackZCV2")!)
+        row.append(UIImage(named: "BlackZCV3")!)
+        row.append(UIImage(named: "BlackZCV4")!)
+        ZCV.append(row)
         
-        let sil1 = UIImage(named: "SilverZCP1")
-        let sil2 = UIImage(named: "SilverZCP2")
-        let sil3 = UIImage(named: "SilverZCP3")
-        let sil4 = UIImage(named: "SilverZCP4")
-        ZCP[4].append(sil1!)
-        ZCP[4].append(sil2!)
-        ZCP[4].append(sil3!)
-        ZCP[4].append(sil4!)
+        row.removeAll()
+        row.append(UIImage(named: "SilverZCP1")!)
+        row.append(UIImage(named: "SilverZCP2")!)
+        row.append(UIImage(named: "SilverZCP3")!)
+        row.append(UIImage(named: "SilverZCP4")!)
+        ZCP.append(row)
         
-        let sil5 = UIImage(named: "SilverZCV1")
-        let sil6 = UIImage(named: "SilverZCV2")
-        let sil7 = UIImage(named: "SilverZCV3")
-        let sil8 = UIImage(named: "SilverZCV4")
-        ZCV[4].append(sil5!)
-        ZCV[4].append(sil6!)
-        ZCV[4].append(sil7!)
-        ZCV[4].append(sil8!)
-     */
+        row.removeAll()
+        row.append(UIImage(named: "SilverZCV1")!)
+        row.append(UIImage(named: "SilverZCV2")!)
+        row.append(UIImage(named: "SilverZCV3")!)
+        row.append(UIImage(named: "SilverZCV4")!)
+        ZCV.append(row)
+     
         // make sure initial screen is all set
         quote1.hidden = false
         quote2.hidden = false
         quote3.hidden = false
+        carBckGrnd.hidden = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -180,7 +163,7 @@ class ViewController: UIViewController {
             wheel2.hidden = true
             wheel3.hidden = true
             wheel4.hidden = true
-        case 5: // initial settings
+        case 4,5: // initial settings
             quote1.hidden = true
             quote2.hidden = true
             quote3.hidden = true
@@ -232,7 +215,6 @@ class ViewController: UIViewController {
     
     @IBAction func DisplayCarImage(sender: UIButton) {
         // modify setting button indicates
-        print (sender.tag)
         switch (sender.tag) {
         case 0: if (MTLabel1.hidden == false) {bodyType = 0}
                 else {modelType = 0}
@@ -251,12 +233,14 @@ class ViewController: UIViewController {
         }
     
         // Figure out which array of images we will be using
-        
+        //  Currenty only have images for Z06 so
         if (modelType == 0) {       // Stingray
             if (bodyType == 0) {      // Coupe
-                ImArr = SCP
+                //ImArr = SCP
+                ImArr = ZCP
             }else {                   // Convertible
-                ImArr = SCV
+                //ImArr = SCV
+                ImArr = ZCV
             }
         } else {                    // Z06
             if (bodyType == 0) {      // Coupe
@@ -266,12 +250,8 @@ class ViewController: UIViewController {
             }
         }
         
-           // mainImage.image = ImArr[colorNum][wheel]
-        let blk1 = UIImage(named: "BlackZCP1")
-        mainImage.image = blk1
-        
-        
-
+        carBckGrnd.hidden = false
+        mainImage.image = ImArr[colorNum][wheel]
         
     }// end DisplayCarImage function
     
